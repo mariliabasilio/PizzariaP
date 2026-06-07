@@ -10,14 +10,21 @@ header{
     align-items:center;
 }
 
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav ul{
     display: flex;
     gap: 15px;
     list-style: none;
+
 }
 
 nav ul button{
-    background: #1813132a;
+    background: #241b1b2a;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -25,7 +32,7 @@ nav ul button{
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s;   
 }
 
 nav ul button:hover{

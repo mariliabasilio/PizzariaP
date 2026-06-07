@@ -46,13 +46,9 @@ nav a{
 }
 
 .perfil img{
-    width:100px;
-    height:100px;
+    width:200px;
+    height:200px;
     border-radius:15px;
-}
-
-.perfil h1{
-    margin:0;
 }
 
 .perfil p{

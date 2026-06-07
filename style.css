@@ -10,18 +10,27 @@ header{
     align-items:center;
 }
 
-nav{
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-
 nav ul{
     display: flex;
-    gap: 50px;
+    gap: 15px;
     list-style: none;
-    font-size: 18px;
+}
+
+nav ul button{
+    background: #1813132a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul button:hover{
+    background: #b51f1f;
+    transform: translateY(-2px);
 }
 
 nav a{

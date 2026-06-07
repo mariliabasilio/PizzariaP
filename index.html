@@ -27,93 +27,87 @@
         </div>
     </section>
 
-        <section class="filtros">
-            <input type="text" placeholder="Buscar produto">
-        </section>
+    <section class="filtros">
+        <input type="text" placeholder="Buscar produto">
+    </section>
 
-        <section class="destaques">
+    <section class="destaques">
 
-            <div class="card">
-                <img src="calabresa.jpg" alt="Pizza Calabresa">
+        <div class="card"> 
+            <img src="calabresa.jpg" alt="Pizza Calabresa">
+            <h3>Pizza Calabresa</h3>
+            <p class="preco">R$ 39,90</p>
+            <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+                Pedir
+            </button>
+        </div>
 
-                <h3>Pizza Calabresa</h3>
+        <div class="card">
+            <img src="portuguesa.jpg" alt="Pizza Portuguesa">
 
-                <p class="preco">R$ 39,90</p>
+            <h3>Pizza Portuguesa</h3>
 
-                <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
-                    Pedir
-                </button>
-            </div>
+            <p class="preco">R$ 44,90</p>
 
-            <div class="card">
-                <img src="portuguesa.jpg" alt="Pizza Portuguesa">
+            <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
+                Pedir
+            </button>
+        </div>
 
-                <h3>Pizza Portuguesa</h3>
+        <div class="card">
+            <img src="frango.jpg" alt="Pizza Frango">
 
-                <p class="preco">R$ 44,90</p>
+            <h3>Pizza Frango</h3>
 
-                <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
-                    Pedir
-                </button>
-            </div>
+            <p class="preco">R$ 49,90</p>
 
-            <div class="card">
-                <img src="frango.jpg" alt="Pizza Frango">
+            <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
+                Pedir
+            </button>
+        </div>
 
-                <h3>Pizza Frango</h3>
+    </section>
 
-                <p class="preco">R$ 49,90</p>
+    <section class="carrinho">
+        <h2>🛒 Meu Pedido</h2>
 
-                <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
-                    Pedir
-                </button>
-            </div>
+        <ul id="lista-carrinho"></ul>
 
-        </section>
+        <h3>Total: R$ <span id="total">0.00</span></h3>
+    </section>
 
-        <section class="carrinho">
-            <h2>🛒 Meu Pedido</h2>
+    <section class="tabela-pedidos">
+        <h2>Pedidos</h2>
 
-            <ul id="lista-carrinho"></ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Pizza</th>
+                    <th>Tamanho</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
 
-            <h3>Total: R$ <span id="total">0.00</span></h3>
-        </section>
-
-        <section class="tabela-pedidos">
-            <h2>Pedidos</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Cliente</th>
-                        <th>Pizza</th>
-                        <th>Tamanho</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Marília</td>
-                        <td>Calabresa</td>
-                        <td>Grande</td>
-                        <td>
-                            <button class="editar">
-                                Editar
-                            </button>
-
-                            <button class="excluir">
-                                Excluir
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-    </main>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Marília</td>
+                    <td>Calabresa</td>
+                    <td>Grande</td>
+                    <td>
+                        <button class="editar">
+                            Editar
+                        </button>
+                        <button class="excluir">
+                            Excluir
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <footer class="footer">
         <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>

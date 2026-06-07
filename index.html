@@ -1,101 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barão Pizzaria</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="logo">Barão Delivery de Pizzas!</div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Cadastrar</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Promoções</a></li>
-            <li><a href="#">Pedidos</a></li>
-            <li><a href="#">Cadastrar</a></li>
-        </ul>
-    </nav>
-</header>
+    <main>
 
-<section class="banner">
-    <img src="banner.jpg" alt="Banner">
-</section>
+        <section class="perfil">
+            <div>
+                <h1>Bella Massa</h1>
+                <p>Aberto até 22:50</p>
+            </div>
+        </section>
 
-<section class="perfil">
-    <img src="logo.png" alt="Logo">
+        <section class="filtros">
+            <input type="text" placeholder="Buscar produto">
+        </section>
 
-    <div>
-        <h1>Bella Massa</h1>
-        <p>Aberto até 22:50</p>
-    </div>
-</section>
+        <section class="destaques">
 
-<section class="filtros">
-    <select>
-        <option>Categorias</option>
-        <option>Pizzas</option>
-        <option>Bebidas</option>
-    </select>
+            <div class="card">
+                <img src="calabresa.jpg" alt="Pizza Calabresa">
 
-    <input type="text" placeholder="Buscar produto">
-</section>
+                <h3>Pizza Calabresa</h3>
 
-<section class="destaques">
+                <p class="preco">R$ 39,90</p>
 
+                <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+                    Pedir
+                </button>
+            </div>
 
-    <div class="Sabor1">
-        <img src="calabresa.jpg">
+            <div class="card">
+                <img src="portuguesa.jpg" alt="Pizza Portuguesa">
 
-        <h3>Pizza Calabresa</h3>
+                <h3>Pizza Portuguesa</h3>
 
-        <p class="preco">39.90</p>
+                <p class="preco">R$ 44,90</p>
 
-        <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
-            Pedir
-        </button>
-    </div>
+                <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
+                    Pedir
+                </button>
+            </div>
 
-    <div class="Sabor2">
-        <img src="portuguesa.jpg">
+            <div class="card">
+                <img src="frango.jpg" alt="Pizza Frango">
 
-        <h3>Pizza Portuguesa</h3>
+                <h3>Pizza Frango</h3>
 
-        <p class="preco">44,90</p>
+                <p class="preco">R$ 49,90</p>
 
-        <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
-            Pedir
-        </button>
-    </div>
+                <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
+                    Pedir
+                </button>
+            </div>
 
-    <div class="Sabor3">
-        <img src="frango.jpg">
+        </section>
 
-        <h3>Pizza Frango</h3>
+        <section class="carrinho">
+            <h2>🛒 Meu Pedido</h2>
 
-        <p class="preco">49,90</p>
+            <ul id="lista-carrinho"></ul>
 
-        <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
-            Pedir
-        </button>
-    </div>
+            <h3>Total: R$ <span id="total">0.00</span></h3>
+        </section>
 
-<section class="carrinho">
-
-    <h2>🛒 Meu Pedido</h2>
-
-    <ul id="lista-carrinho"></ul>
-
-    <h3>Total: R$ <span id="total">0.00</span></h3>
-
-</section>
-
-</section>
-        <section class="tabela">
-            <h2>Pedidos Realizados</h2>
+        <section class="tabela-pedidos">
+            <h2>Pedidos</h2>
 
             <table>
                 <thead>
@@ -130,10 +117,11 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>
     </footer>
 
-    <script src="text.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

@@ -6,19 +6,20 @@ body{
 
 header{
     background:#111;
-    padding:20px;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
+    padding:40px;
     align-items:center;
 }
 
+nav{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
 nav ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
+    display: flex;
+    gap: 50px;
+    list-style: none;
 }
 
 nav a{
@@ -76,69 +77,100 @@ nav a{
     gap:20px;
 }
 
-.Sabor1 button, .Sabor2 button, .Sabor3 button{
-    margin:15px;
-    width:calc(100% - 30px);
-    background:#d62828;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:8px;
-}
-
-.Sabor1, .Sabor2, .Sabor3{
+.card{
     background:white;
     border-radius:15px;
     overflow:hidden;
     box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-.Sabor1 img, .Sabor2 img, .Sabor3 img{
+.card img{
     width:100%;
     height:180px;
     object-fit:cover;
 }
 
-.Sabor1 h3,.Sabor2 h3,.Sabor3 h3,
-.Sabor1 p, .Sabor2 p, .Sabor3 p{
-    padding:0 15px;
-}
-
-.Sabor1 h3, .Sabor2 h3, .Sabor3 h3,
-.Sabor1 p, .Sabor2 p, .Sabor3 p{
-    padding:0 15px;
+.card button{
+    width:calc(100% - 30px);
+    margin:15px;
+    padding:12px;
+    background:#d62828;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 .carrinho{
-    position: fixed;
-    right: 20px;
-    top: 180px;
-
-    width: 300px;
-
-    background: white;
-    padding: 20px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    position:fixed;
+    right:20px;
+    top:180px;
+    width:300px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
 .carrinho ul{
-    list-style: none;
-    padding: 0;
+    list-style:none;
+    padding:0;
 }
 
 .carrinho li{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
 }
 
 .carrinho button{
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 5px;
+    background:red;
+    color:white;
+    border:none;
+    padding:5px 8px;
+    border-radius:5px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+}
+
+th{
+    background:#d62828;
+    color:white;
+}
+
+th,
+td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.editar{
+    background:#f39c12;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.excluir{
+    background:#e74c3c;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
 }

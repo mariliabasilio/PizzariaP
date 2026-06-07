@@ -76,20 +76,7 @@ nav a{
     gap:20px;
 }
 
-.Sabor1 img,
-.Sabor2 img,
-.Sabor3 img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.card h3,
-.card p{
-    padding:0 15px;
-}
-
-.card button{
+.Sabor1 button, .Sabor2 button, .Sabor3 button{
     margin:15px;
     width:calc(100% - 30px);
     background:#d62828;
@@ -106,13 +93,21 @@ nav a{
     box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-
 .Sabor1 img, .Sabor2 img, .Sabor3 img{
     width:100%;
     height:180px;
     object-fit:cover;
 }
 
+.Sabor1 h3,.Sabor2 h3,.Sabor3 h3,
+.Sabor1 p, .Sabor2 p, .Sabor3 p{
+    padding:0 15px;
+}
+
+.Sabor1 h3, .Sabor2 h3, .Sabor3 h3,
+.Sabor1 p, .Sabor2 p, .Sabor3 p{
+    padding:0 15px;
+}
 
 .carrinho{
     position: fixed;

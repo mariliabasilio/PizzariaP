@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">🍕 Bella Massa</div>
+
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Promoções</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Cadastrar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="banner">
+    <img src="banner.jpg" alt="Banner">
+</section>
+
+<section class="perfil">
+    <img src="logo.png" alt="Logo">
+
+    <div>
+        <h1>Bella Massa</h1>
+        <p>Aberto até 22:50</p>
+    </div>
+</section>
+
+<section class="filtros">
+    <select>
+        <option>Categorias</option>
+        <option>Pizzas</option>
+        <option>Bebidas</option>
+    </select>
+
+    <input type="text" placeholder="Buscar produto">
+</section>
+
+<section class="destaques">
+
+    <div class="card">
+        <img src="pizza1.jpg">
+        <h3>Pizza Calabresa</h3>
+        <p>R$ 39,90</p>
+        <button>Pedir</button>
+    </div>
+
+    <div class="card">
+        <img src="pizza2.jpg">
+        <h3>Pizza Portuguesa</h3>
+        <p>R$ 44,90</p>
+        <button>Pedir</button>
+    </div>
+
+    <div class="card">
+        <img src="pizza3.jpg">
+        <h3>Pizza Frango</h3>
+        <p>R$ 49,90</p>
+        <button>Pedir</button>
+    </div>
+
+    <div class="card">
+    <img src="pizza1.jpg">
+
+    <h3>Pizza Calabresa</h3>
+
+    <p class="preco">39.90</p>
+
+    <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+        Pedir
+    </button>
+
+</div>
+
+<section class="carrinho">
+
+    <h2>🛒 Meu Pedido</h2>
+
+    <ul id="lista-carrinho"></ul>
+
+    <h3>Total: R$ <span id="total">0.00</span></h3>
+
+</section>
+
+</section>
+        <section class="tabela">
+            <h2>Pedidos Realizados</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Pizza</th>
+                        <th>Tamanho</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Marília</td>
+                        <td>Calabresa</td>
+                        <td>Grande</td>
+                        <td>
+                            <button class="editar">
+                                Editar
+                            </button>
+
+                            <button class="excluir">
+                                Excluir
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Bella Massa - Sistema CRUD de Pizzaria</p>
+    </footer>
+
+</body>
+</html>

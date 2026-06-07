@@ -10,7 +10,7 @@
 
 <header>
     <nav>
-        <div class="logo">🍕 Bella Massa</div>
+        <div class="logo">Barão Delivery de Pizzas!</div>
 
         <ul>
             <li><a href="#">Início</a></li>
@@ -46,39 +46,42 @@
 
 <section class="destaques">
 
-    <div class="card">
-        <img src="pizza1.jpg">
+
+    <div class="Sabor1">
+        <img src="calabresa.jpg">
+
         <h3>Pizza Calabresa</h3>
-        <p>R$ 39,90</p>
-        <button>Pedir</button>
+
+        <p class="preco">39.90</p>
+
+        <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+            Pedir
+        </button>
     </div>
 
-    <div class="card">
-        <img src="pizza2.jpg">
+    <div class="Sabor2">
+        <img src="portuguesa.jpg">
+
         <h3>Pizza Portuguesa</h3>
-        <p>R$ 44,90</p>
-        <button>Pedir</button>
+
+        <p class="preco">44,90</p>
+
+        <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
+            Pedir
+        </button>
     </div>
 
-    <div class="card">
-        <img src="pizza3.jpg">
+    <div class="Sabor3">
+        <img src="frango.jpg">
+
         <h3>Pizza Frango</h3>
-        <p>R$ 49,90</p>
-        <button>Pedir</button>
+
+        <p class="preco">49,90</p>
+
+        <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
+            Pedir
+        </button>
     </div>
-
-    <div class="card">
-    <img src="pizza1.jpg">
-
-    <h3>Pizza Calabresa</h3>
-
-    <p class="preco">39.90</p>
-
-    <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
-        Pedir
-    </button>
-
-</div>
 
 <section class="carrinho">
 
@@ -128,7 +131,7 @@
     </main>
 
     <footer>
-        <p>© 2026 Bella Massa - Sistema CRUD de Pizzaria!</p>
+        <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>
     </footer>
 
 </body>

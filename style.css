@@ -76,14 +76,9 @@ nav a{
     gap:20px;
 }
 
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.card img{
+.Sabor1 img,
+.Sabor2 img,
+.Sabor3 img{
     width:100%;
     height:180px;
     object-fit:cover;
@@ -103,6 +98,21 @@ nav a{
     padding:12px;
     border-radius:8px;
 }
+
+.Sabor1, .Sabor2, .Sabor3{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+
+.Sabor1 img, .Sabor2 img, .Sabor3 img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
 
 .carrinho{
     position: fixed;

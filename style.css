@@ -45,6 +45,11 @@ nav a{
     text-decoration:none;
 }
 
+aside{
+    position: fixed;
+    right: 20px;
+    top: 180px;
+}
 .banner img{
     width:100%;
     height:300px;
@@ -126,7 +131,7 @@ nav a{
 }
 
 .carrinho{
-    position:fixed;
+    position: fixed ;
     right:20px;
     top:180px;
     width:300px;

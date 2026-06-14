@@ -1,23 +1,22 @@
 body{
     height: 90%;
-    background:#fff8ec;
+    background: #fff8ec;
     font-family: Arial, sans-serif;
     margin: 0;
-    /* espaço para a header fixa */
     padding-top: 80px;
 }
 
 header{
-    background:#000;
-    height:80px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
+    background: #000;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav{
@@ -26,51 +25,34 @@ nav{
     align-items: center;
 }
 
-nav ul{
+.menu{
     display: flex;
     gap: 15px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul button{
-    background: #c40000;
-    color:rgb(255, 255, 255);
-    border:none;
-    font-size:18px;
-    font-weight:bold;
-    padding:12px 25px;
-    border-radius:10px;
-    transition:.3s;
+.menu button{
+    background: #ff000075 ;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
 }
 
-nav ul button:hover{
-    background: #000000;
+.menu button:hover{
+    background: #000;
     transform: translateY(-2px);
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
+    color: rgb(255, 0, 0);
+    text-decoration: none;
 }
-
-aside{
-    position: fixed;
-    right: 20px;
-    top: 180px;
-}
-
-.header{
-   position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #111;
-    padding: 20px;
-    z-index: 1000;
-}
-/* css do cadastro João */
+/*/////////////////////////////////*/
+/* Modal Cadastro */
 
 .overlay{
     display: flex;
@@ -85,44 +67,30 @@ aside{
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s;
+    transition: opacity .5s;
 }
 
 .overlay.ativo{
     opacity: 1;
     visibility: visible;
 }
-
-/* fim do css cadastro */
-
+/*/////////////////////////////////*/
 .modal{
-    background-color: white;
+    background: white;
     padding: 30px;
     border-radius: 10px;
     width: 350px;
     z-index: 1001;
 }
+/*/////////////////////////////////*/
+/* Banner */
 
 .perfil{
     width: 80%;
-    height: 350px; /* altura do banner */
+    height: 350px;
     margin: 20px auto;
     border-radius: 15px;
     overflow: hidden;
-}
-
-.perfil div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: none;
-    object-fit: cover;
-}
-
-.perfil div img{
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
 }
 
 .img-fundo{
@@ -131,32 +99,35 @@ aside{
     object-fit: cover;
     display: block;
 }
+/*/////////////////////////////////*/
+/* Busca */
 
 .filtros{
-    width:80%;
-    margin:auto;
-    display:flex;
-    gap:20px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
 }
 
 .filtros select,
 .filtros input{
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 .filtros input{
-    flex:1;
+    flex: 1;
 }
+/*/////////////////////////////////*/
+/* Cards */
 
 .destaques{
-    width:80%;
-    margin:40px auto;
-    display:flex;
-    justify-content:left;
-    gap:20px;
-    flex-wrap:wrap;
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -165,106 +136,170 @@ aside{
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
-
 }
 
 .card img{
-    width: 300px;
+    width: 100%;
     height: 300px;
     object-fit: cover;
-    display: flex;
+}
+
+.card h3,
+.card .preco{
+    margin-left: 15px;
 }
 
 .card button{
-    width:calc(100% - 30px);
-    margin:15px;
-    padding:12px;
-    background:#c40000;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+    width: calc(100% - 30px);
+    margin: 15px;
+    padding: 12px;
+    background: #ff000075 ;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .card button:hover{
-    background: #000000;
-    transform: translateY(-2px);
+    background: #000;
+}
+/*/////////////////////////////////*/
+/* Carrinho */
+
+.btn-carrinho{
+    background: #ff000075 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+    font-weight: bold;
 }
 
-.carrinho{
-    position: fixed ;
-    right:20px;
-    top:180px;
-    width:250px;
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
+.btn-carrinho:hover{
+    background: #000000 !important;
+    color: white !important;
+}
+/*/////////////////////////////////*
+/* Painel Carrinho */
 
-    z-index: 1;
+.painel-carrinho{
+    position: fixed;
+    top: 80px;
+    right: -350px;
+
+    width: 320px;
+    height: calc(100vh - 80px);
+
+    background: white;
+    padding: 20px;
+
+    box-shadow: -3px 0 10px rgba(0,0,0,.2);
+    transition: .3s;
+
+    z-index: 999;
 }
 
-.carrinho ul{
-    list-style:none;
-    padding:0;
+.painel-carrinho.ativo{
+    right: 0;
 }
 
-.carrinho li{
-    display:flex;
-    justify-content:space-between;
-    margin:10px 0;
+.painel-carrinho ul{
+    list-style: none;
+    padding: 0;
 }
 
-.carrinho button{
-    background:red;
-    color:white;
-    border:none;
-    padding:5px 8px;
-    border-radius:5px;
+.painel-carrinho li{
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+/*/////////////////////////////////*/
+/* Itens do Carrinho */
+.item-carrinho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+/*/////////////////////////////////*/
+/* Controle de Quantidade */
+.controle-qtd{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.controle-qtd button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #c40000;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.controle-qtd button:hover{
+    background: #000;
+}
+/*/////////////////////////////////*/
+/* Finalizar Pedido */
+.finalizar{
+    width: 100%;
+    padding: 12px;
+    background: #b80000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.finalizar:hover{
+    background: #000;
+}
+/*/////////////////////////////////*/
+/* Tabelas */
 table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:30px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
 }
 
 th{
-    background:#d62828;
-    color:white;
+    background: #ff000075;
+    color: white;
 }
 
 th,
 td{
-    padding:12px;
-    border:1px solid #ddd;
-    text-align:center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
+/*/////////////////////////////////*/
 
 .editar{
-    background:#f39c12;
-    color:white;
-    border:none;
-    padding:8px 12px;
-    border-radius:5px;
-    cursor:pointer;
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .excluir{
-    background:#e74c3c;
-    color:white;
-    border:none;
-    padding:8px 12px;
-    border-radius:5px;
-    cursor:pointer;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
 }
+/*/////////////////////////////////*/
+/* Rodapé */
 
 .footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
-
-

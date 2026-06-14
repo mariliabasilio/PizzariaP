@@ -4,91 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barão Pizzaria</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <button>Início</button>
-                <button onclick="window.location.href='promo.html'" >Promoções</button>
-                <button id="btnCadastro">Minha Conta</button>
+<header>
+    <nav>
+        <div class="menu">
+            <button>Início</button>
 
-                <div id="overlay" class="overlay">
-                    <div class="modal">
-                        <button class="fechar">&times;</button>
-                        <h2>Informe seu número</h2>
-                        <input type="text" placeholder="Telefone">
-                        <button>Confirmar</button>
-                    </div>
-                </div>
-            </ul>
-        </nav>
-    </header>
+            <button onclick="window.location.href='promo.html'">
+                Promoções
+            </button>
 
-    <section class="perfil">
-        <img src="imagens/barao.jpg" class="img-fundo">
+            <button id="btnCadastro">
+                Minha Conta
+            </button>
 
-    </section>
-
-    <section class="filtros">
-        <input type="text" placeholder="Buscar produto">
-    </section>
-
-    <section class="destaques">
-
-        <div class="card"> 
-            <img src="imagens/calabresa.jpg" alt="Pizza Calabresa">
-            <h3>Pizza Calabresa</h3>
-            <p class="preco">R$ 39,90</p>
-            <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
-                Pedir
+            <button id="btnCarrinho" class="btn-carrinho">
+                🛒 <span id="quantidade">0</span>
             </button>
         </div>
+    </nav>
+</header>
 
-        <div class="card">
-            <img src="imagens/portuguesa.jpg" alt="Pizza Portuguesa">
+<div id="overlay" class="overlay">
+    <div class="modal">
+        <button class="fechar">&times;</button>
 
-            <h3>Pizza Portuguesa</h3>
+        <h2>Informe seu número</h2>
 
-            <p class="preco">R$ 44,90</p>
+        <input type="text" placeholder="Telefone">
 
-            <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
-                Pedir
-            </button>
-        </div>
+        <button>Confirmar</button>
+    </div>
+</div>
 
-        <div class="card">
-            <img src="imagens/frango.jpg" alt="Pizza Frango">
+<section class="perfil">
+    <img src="imagens/barao.jpg" class="img-fundo" alt="Banner da Pizzaria">
+</section>
 
-            <h3>Pizza Frango</h3>
+<section class="filtros">
+    <input type="text" placeholder="Buscar produto">
+</section>
 
-            <p class="preco">R$ 49,90</p>
+<section class="destaques">
 
-            <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
-                Pedir
-            </button>
-        </div>
+    <div class="card">
+        <img src="imagens/calabresa.jpg" alt="Pizza Calabresa">
 
-    </section>
+        <h3>Pizza Calabresa</h3>
 
-    <aside>
-        <div class="carrinho">
-            <h2>🛒 Carrinho</h2>
+        <p class="preco">R$ 39,90</p>
 
-            <ul id="lista-carrinho"></ul>
+        <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+            Pedir
+        </button>
+    </div>
 
-            <h3>Total: R$ <span id="total">0.00</span></h3>
-        </div>
-    </aside>
+    <div class="card">
+        <img src="imagens/portuguesa.jpg" alt="Pizza Portuguesa">
 
-    <footer class="footer">
-        <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>
-    </footer>
+        <h3>Pizza Portuguesa</h3>
 
-    <script src="script.js"></script>
+        <p class="preco">R$ 44,90</p>
+
+        <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
+            Pedir
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="imagens/frango.jpg" alt="Pizza Frango">
+
+        <h3>Pizza Frango</h3>
+
+        <p class="preco">R$ 49,90</p>
+
+        <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
+            Pedir
+        </button>
+    </div>
+
+</section>
+
+<div id="painelCarrinho" class="painel-carrinho">
+    <h2> Seu Pedido 🛒</h2>
+
+    <ul id="listaCarrinho">
+        <li>Nenhum item adicionado</li>
+    </ul>
+
+    <p>
+        <strong>Total:</strong>
+        R$ <span id="total">0.00</span>
+    </p>
+
+    <button class="finalizar">
+        Finalizar Pedido
+    </button>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

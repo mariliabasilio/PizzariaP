@@ -70,6 +70,19 @@ nav a{
     transition: opacity .5s;
 }
 
+.buutton-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: #ff000075;
+    padding: 5px 10px;
+}
+
 .overlay.ativo{
     opacity: 1;
     visibility: visible;

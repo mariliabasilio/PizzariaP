@@ -39,3 +39,21 @@ function atualizarCarrinho() {
 
     totalSpan.textContent = total.toFixed(2);
 }
+
+// cadastro fechar e abrir overlay joão 
+
+const overlay = document.getElementById("overlay");
+
+const btnCadastro = document.getElementById("btnCadastro");
+
+btnCadastro.addEventListener("click", () => {
+    overlay.classList.add("ativo");
+});
+
+const fechar = document.querySelector(".fechar");
+
+fechar.addEventListener("click", () => {
+    overlay.classList.remove("ativo");
+});
+
+// fim overlay

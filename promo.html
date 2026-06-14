@@ -67,15 +67,22 @@
 
     </section>
 
-    <aside>
-        <div class="carrinho">
-            <h2>🛒 Carrinho</h2>
+    <div id="painelCarrinho" class="painel-carrinho">
+        <h2> Seu Pedido 🛒</h2>
 
-            <ul id="lista-carrinho"></ul>
+        <ul id="listaCarrinho">
+            <li>Nenhum item adicionado</li>
+        </ul>
 
-            <h3>Total: R$ <span id="total">0.00</span></h3>
-        </div>
-    </aside>
+        <p>
+            <strong>Total:</strong>
+            R$ <span id="total">0.00</span>
+        </p>
+
+        <button class="finalizar">
+            Finalizar Pedido
+        </button>
+    </div>
 
     <footer class="footer">
         <p>© 2026 Barão - Sistema CRUD de Pizzaria!</p>

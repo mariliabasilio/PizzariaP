@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barão Pizzaria</title>
+    <title>Barão Pizzaria/promocao</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,8 +13,8 @@
         <nav>
             <ul>
 
-                <button>Início</button>
-                <button onclick="window.location.href='promo.html'" >Promoções</button>
+                <button onclick="window.location.href='index.html'" >Início</button>
+                <button>Promoções</button>
 
                 <button id="btnCadastro">Minha Conta</button>
 
@@ -45,40 +45,31 @@
     <section class="destaques">
 
         <div class="card"> 
-            <img src="calabresa.jpg" alt="Pizza Calabresa">
-            <h3>Pizza Calabresa</h3>
-            <p class="preco">R$ 39,90</p>
-            <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
+            <img src="promo1.jpg" alt="promo">
+
+            <h3>Promo Super Calabresa</h3>
+
+            <p class="preco">R$ 89,90</p>
+
+            <button onclick="adicionarCarrinho('P.Super Calabresa',89.90)">
                 Pedir
             </button>
         </div>
 
         <div class="card">
-            <img src="portuguesa.jpg" alt="Pizza Portuguesa">
+            <img src="promo2.jpg" alt="promo">
 
-            <h3>Pizza Portuguesa</h3>
+            <h3>Pizza frango + Brotinho</h3>
 
-            <p class="preco">R$ 44,90</p>
+            <p class="preco">R$ 54,90</p>
 
-            <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
+            <button onclick="adicionarCarrinho('P.Pizza Frango + Brotinho',54.90)">
                 Pedir
             </button>
         </div>
 
-        <div class="card">
-            <img src="frango.jpg" alt="Pizza Frango">
-
-            <h3>Pizza Frango</h3>
-
-            <p class="preco">R$ 49,90</p>
-
-            <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
-                Pedir
-            </button>
-        </div>
 
     </section>
-
 
     <aside>
         <div class="carrinho">

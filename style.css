@@ -64,35 +64,33 @@ aside{
 }
 
 .perfil{
-    position: relative;
-
     width: 80%;
-    margin: 20PX auto;
+    height: 350px; /* altura do banner */
+    margin: 20px auto;
     border-radius: 15px;
     overflow: hidden;
 }
 
 .img-fundo{
     width: 100%;
-    display: block;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .perfil div{
     position: absolute;
-
     top: 50%;
     left: 50%;
-
-    transform: translate(-50%, -50%);
+    transform: none;
+    object-fit: cover;
 }
 
-.perfil div img {
-    width: clamp(180px, 23vw, 400px);
-    height: clamp(180px, 23vw, 400px);
+.perfil div img{
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 }
-
 
 .filtros{
     width:80%;
@@ -115,22 +113,25 @@ aside{
 .destaques{
     width:80%;
     margin:40px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    display:flex;
+    justify-content:left;
     gap:20px;
+    flex-wrap:wrap;
 }
-
 .card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,.1);
+
 }
 
 .card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: flex;
 }
 
 .card button{

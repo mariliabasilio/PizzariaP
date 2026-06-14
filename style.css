@@ -4,20 +4,20 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     /* espaço para a header fixa */
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 header{
-    background:#111;
-    padding:40px;
-    /* deixa a header fixa */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    z-index: 1000;
-    box-sizing: border-box;
+    background:#000;
+    height:80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
 }
 
 nav{
@@ -35,19 +35,18 @@ nav ul{
 }
 
 nav ul button{
-    background: #241b1b2a;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;   
+    background: #c40000;
+    color:rgb(255, 255, 255);
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    padding:12px 25px;
+    border-radius:10px;
+    transition:.3s;
 }
 
 nav ul button:hover{
-    background: #b51f1f;
+    background: #000000;
     transform: translateY(-2px);
 }
 

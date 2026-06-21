@@ -28,15 +28,22 @@
     </nav>
 </header>
 
+
+<div id="overlayLOG" class="overlayLOG">
+    <div class="modal">
+        <button id="btnFecharLOG" class="fechar">&times;</button>
+        <h2>Bem-vindo, <span id="usuarioNome">Visitante</span>!</h2>
+        <button id="btnRmvCad">Deslogar</button>
+    </div>
+</div>
+
 <div id="overlay" class="overlay">
     <div class="modal">
-        <button class="fechar">&times;</button>
-
-        <h2>Informe seu número</h2>
-
-        <input type="text" placeholder="Telefone">
-
-        <button>Confirmar</button>
+        <button id="btnFechar" class="fechar">&times;</button>
+        <h2>Informe seu número e nome</h2>
+        <input type="text" id="inputTelefone" placeholder="Telefone">
+        <input type="text" id="inputNome" placeholder="Nome">
+        <button id="btnConfirmar">Confirmar</button>
     </div>
 </div>
 
@@ -47,6 +54,10 @@
 <section class="filtros">
     <input type="text" placeholder="Buscar produto">
 </section>
+
+<div class="titulos">
+    <h2>Pizzas</h2>
+</div>
 
 <section class="destaques">
 
@@ -88,6 +99,39 @@
 
 </section>
 
+    <div class="titulos">
+        <h2>Promoções</h2>
+    </div>
+
+ <section class="destaques">
+
+    <div class="card"> 
+        <img src="imagens/promo1.jpg" alt="promo">
+
+        <h3>2x Pizzas + refri gratis</h3>
+
+        <p class="preco">R$ 59,90</p>
+
+        <button onclick="adicionarCarrinho('2x Pizzas + refri gratis',59.90)">
+                Pedir
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="imagens/promo2.jpg" alt="promo">
+
+        <h3>Pizza + borda de chocolate gratis</h3>
+
+        <p class="preco">R$ 34,90</p>
+
+        <button onclick="adicionarCarrinho('Pizza + borda de chocolate gratis',34.90)">
+            Pedir
+        </button>
+    </div>
+
+
+</section>
+
 <div id="painelCarrinho" class="painel-carrinho">
     <h2> Seu Pedido 🛒</h2>
 
@@ -100,7 +144,7 @@
         R$ <span id="total">0.00</span>
     </p>
 
-    <button class="finalizar">
+    <button class="finalizar" id="btnFinalizar">
         Finalizar Pedido
     </button>
 </div>

@@ -221,8 +221,8 @@ nav a{
     width: calc(100% - 30px);
     margin: 15px;
     padding: 12px;
-    background: #ff000075 ;
-    color: white;
+    background: #aa0101 ;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 8px;
     cursor: pointer;

@@ -34,11 +34,11 @@ nav{
     background: #ff000075 ;
     color: white;
     border: none;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: 10px;
-    transition: .3s;
+    transition: .2s;
     cursor: pointer;
 }
 
@@ -88,7 +88,7 @@ nav a{
 }
 
 .overlay button:hover{
-    background: #ff000075 ;
+    background: #aa0101;
 }
 
 /*/////////////////////////////////*/
@@ -130,7 +130,7 @@ nav a{
 }
 
 .overlayLOG button:hover{
-    background: #ff000075 ;
+    background: #cf0000 ;
 }
 
 /*/////////////////////////////////*/

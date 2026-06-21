@@ -1,13 +1,13 @@
 body{
     height: 90%;
-    background: #fff8ec;
-    font-family: Arial, sans-serif;
+    background: #fff8ea;
+    font-family:'Poppins', sans-serif;
     margin: 0;
     padding-top: 80px;
 }
 
 header{
-    background: #000;
+    background: #000000ee;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -40,6 +40,7 @@ nav{
     border-radius: 08px;
     transition: .2s;
     cursor: pointer;
+    font-family:'Poppins', sans-serif;
 }
 
 .menu button:hover{
@@ -172,7 +173,8 @@ nav a{
 .filtros input{
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #6d0000;
+    background: rgb(255, 255, 255);
 }
 
 .filtros input{
@@ -180,11 +182,12 @@ nav a{
 }
 /*/////////////////////////////////*/
 /* Cards */
-.titulos h2 {
+.titulos{
     width: 80%;
+    height: 30px;
     margin: 40px auto;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 550;
     color: #1f2937;
 }
 /*////////////////////////////////*/
@@ -204,6 +207,7 @@ nav a{
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,.1);
+    
 }
 
 .card img{
@@ -226,6 +230,7 @@ nav a{
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-family:'Poppins', sans-serif;
 }
 
 .card button:hover{
@@ -241,6 +246,7 @@ nav a{
     color: #ffffff !important;
     border: 2px solid #aa0101 !important;
     font-weight: bold;
+    font-family:'Poppins', sans-serif;
 }
 
 .btn-carrinho:hover{
@@ -306,6 +312,7 @@ nav a{
     color: white;
     cursor: pointer;
     font-weight: bold;
+    font-family:'Poppins', sans-serif;
 }
 
 .controle-qtd button:hover{
@@ -321,6 +328,7 @@ nav a{
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-family:'Poppins', sans-serif;
 }
 
 .finalizar:hover{
@@ -368,8 +376,8 @@ td{
 /* Rodapé */
 
 .footer{
-    background: #111;
-    color: white;
+    background: #000000ee;
+    color: rgba(255, 0, 0, 0.658);
     text-align: center;
     padding: 20px;
     margin-top: 40px;

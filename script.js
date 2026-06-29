@@ -149,7 +149,7 @@ btnConfirmar.addEventListener("click", () => {
     const telefone = inputTelefone.value.replaceAll(" ", "");
     
     if (!nome || !telefone) {
-        alert('Preencha nome e telefone!');
+        alert('Preencha seu nome e telefone!');
     return;}
 
     const usuario = { nome, telefone };

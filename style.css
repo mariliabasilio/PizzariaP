@@ -1,26 +1,53 @@
+/* ===== PC (padrão) ===== */
+
 body{
-    height: 90%;
-    background: #fff8ea;
-    font-family:'Poppins', sans-serif;
-    margin: 0;
     padding-top: 80px;
+    padding-bottom: 0;
 }
 
 header{
-    background: #000000ee;
-    height: 70px;
-    width: 100%;
-
-
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    
+    width: 100%;
+    height: 80px;
+
+    background: #000000ee;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     z-index: 1000;
+}
+
+@media (max-width: 768px){
+
+    body{
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+    header{
+        top: auto;
+        bottom: 0;
+    }
+}
+
+/* PC */
+.painel-carrinho{
+    top: 80px;
+    bottom: 0;
+}
+
+/* Celular */
+@media (max-width: 768px){
+
+    .painel-carrinho{
+        top: 0;
+        bottom: 80px;
+    }
+
 }
 
 nav{

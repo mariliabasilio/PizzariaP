@@ -3,6 +3,7 @@
 body{
     padding-top: 80px;
     padding-bottom: 0;
+    font-family:'Poppins', sans-serif;
 }
 
 header{
@@ -19,6 +20,7 @@ header{
     align-items: center;
 
     z-index: 1000;
+    font-family:'Poppins', sans-serif;
 }
 
 @media (max-width: 768px){
@@ -55,6 +57,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     width: 80%;
+    font-family:'Poppins', sans-serif;
 }
 
 .menu{

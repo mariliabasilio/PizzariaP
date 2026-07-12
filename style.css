@@ -534,11 +534,14 @@ td{
 .status.aberto{
     background: #dff8e5;
     color: #15803d;
+    font-size: 17px;
+
 }
 
 .status.fechado{
     background: #ffe4e4;
     color: #c1121f;
+    font-size: 17px;
 }
 
 .horario-info{

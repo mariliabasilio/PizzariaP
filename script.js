@@ -5,8 +5,15 @@ btnCarrinho.addEventListener("click", () => {
     painelCarrinho.classList.toggle("ativo");
 });
 
-let carrinho = [];
-let total = 0;
+carrinho = [];
+total = 0;
+atualizarCarrinho();
+
+overlay.classList.remove("ativo");
+
+document.getElementById("inputNome").value = "";
+document.getElementById("inputTelefone").value = "";
+document.getElementById("inputEndereco").value = "";
 
 function adicionarCarrinho(nome, preco) {
     const itemExistente = carrinho.find(item => item.nome === nome);
@@ -110,42 +117,53 @@ btnConfirmar.addEventListener("click", () => {
 function verificarHorario() {
 
     const agora = new Date();
-    const diaSemana = agora.getDay(); // 0=Domingo
+
+    const diaSemana = agora.getDay();
     const hora = agora.getHours();
 
     const status = document.getElementById("statusHorario");
 
-    const abertoDias = [0,2,3,4,5,6]; // Domingo e Terça a Sábado
-    const horaAbertura = 18;
-    const horaFechamento = 23;
+    const diasAbertos = [0, 2, 3, 4, 5, 6]; // Domingo e Terça a Sábado
 
-    if (abertoDias.includes(diaSemana) &&
-        hora >= horaAbertura &&
-        hora < horaFechamento){
+    const abertura = 18;
+    const fechamento = 23;
 
-        status.innerHTML = "🟢 <strong>ABERTO</strong> • Funcionamos das 18h às 23h";
+    const aberto =
+        diasAbertos.includes(diaSemana) &&
+        hora >= abertura &&
+        hora < fechamento;
+
+    if (aberto) {
+
+        status.innerHTML = `
+            <span class="icone-status">🟢</span>
+            <strong>ABERTO</strong><br>
+            <small>Funcionamos das 18h às 23h</small>
+        `;
+
         status.classList.add("aberto");
         status.classList.remove("fechado");
 
-    }else{
+    } else {
 
-        status.innerHTML = "🔴 <strong>FECHADO</strong> • Funcionamos das 18h às 23h";
+        status.innerHTML = `
+            <span class="icone-status">🔴</span>
+            <strong>FECHADO</strong><br>
+            <small>Funcionamos das 18h às 23h</small>
+        `;
+
         status.classList.add("fechado");
         status.classList.remove("aberto");
-
     }
-
 }
 
 /*botão de levar pro topo*/
-
 function voltarAoTopo() {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 }
-
 
     // Atualiza ao carregar
 verificarHorario();

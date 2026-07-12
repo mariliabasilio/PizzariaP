@@ -6,7 +6,13 @@ body{
     font-family:'Poppins', sans-serif;
     background: #FFF8F1;
     color:#242424;
+
 }
+
+h2{
+    color: #18231E;
+}
+
 
 header{
     position: fixed;
@@ -191,7 +197,7 @@ input:focus{
 .horario {
   text-align: center;
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -268,7 +274,6 @@ input:focus{
     object-fit: cover;
 }
 
-.card h3,
 .card .preco{
     color: #B3261E;;
     font-weight:700;

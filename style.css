@@ -121,9 +121,9 @@ nav a{
 }
 
 .overlay button{
-    background: #000000ec;
+    background: #B3261E;
     color: rgb(255, 255, 255);
-    border: 2px solid  #d30000;
+    border: none;
     font-size: 12px;
     font-weight: bold;
     padding: 10px 23px;
@@ -134,7 +134,7 @@ nav a{
 }
 
 .overlay button:hover{
-    background: #A84F2F;
+    background: #8E1E18;
 }
 
 /*/////////////////////////////////*/

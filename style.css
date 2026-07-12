@@ -353,7 +353,8 @@ input:focus{
 }
 
 .btn-carrinho:hover{
-    background: #8E1E18 !important;
+    background: transparent !important;
+    border: #8E1E18 2px solid !important;
     transform: translateY(-2px);    
     color: white !important;
 

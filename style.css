@@ -274,7 +274,7 @@ input:focus{
     font-weight:700;
     font-size:22px;
 }
-}
+
 
 .card button{
     width: calc(100% - 30px);
@@ -353,7 +353,7 @@ input:focus{
 }
 
 .btn-carrinho:hover{
-    background: #8E1E18;!important;
+    background: #8E1E18 !important;
     transform: translateY(-2px);    
     color: white !important;
 

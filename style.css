@@ -140,46 +140,6 @@ nav a{
 
 /*/////////////////////////////////*/
 
-/* Modal Cadastro quando esta logado */
-
-.overlayLOG{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s;
-}
-
-.overlayLOG.ativo{
-    opacity: 1;
-    visibility: visible;
-}
-
-.overlayLOG button{
-    background: #000;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px 25px;
-    border-radius: 10px;
-    transition:.3s;
-    cursor: pointer;
-}
-
-.overlayLOG button:hover{
-    background: #cf0000 ;
-}
-
-/*/////////////////////////////////*/
 .modal{
     background: white;
     padding: 30px;
@@ -203,7 +163,6 @@ input[type="password"]{
 
 .perfil{
     width: 80%;
-    height: 350px;
     margin: 20px auto;
     border-radius: 15px;
     overflow: hidden;
@@ -211,32 +170,68 @@ input[type="password"]{
 
 .img-fundo{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 /*////////////////////////////////*/
-/* Busca */
 
-.filtros{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    gap: 20px;
+@media (max-width:768px){
+
+    .perfil{
+        width: 100%;
+        margin: 0;
+    }
+
+    /*.perfil{
+        width: 100%;
+        height: 130px;
+        margin: 0;
+        border-radius: 10px;
+    }
+
+    .img-fundo{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }*/
 }
 
-.filtros select,
-.filtros input{
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #6d0000;
-    background: rgb(255, 255, 255);
-    font-family:'Poppins', sans-serif;
+.horario {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.filtros input{
-    flex: 1;
+.aberto {
+  color: green;
 }
+
+.fechado {
+  color: red;
+}
+
+@media (max-width:768px){
+    .horario {
+        font-size: 16px;
+        margin: 5px 0;
+        text-align: center;;
+        font-weight: bold;
+    }
+    
+    .aberto {
+        font-size: 16px;
+        color: green;
+    }
+
+    .fechado {
+        font-size: 16px;
+        color: red;
+    }
+}
+
+
+
 /*/////////////////////////////////*/
 /* Cards */
 .titulos{
@@ -258,7 +253,7 @@ input[type="password"]{
     flex-wrap: wrap;
 }
 
-@media (max-width: 900px){
+@media (max-width: 768px){
     .destaques{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -301,6 +296,51 @@ input[type="password"]{
     transform: translateY(-2px);    
     color: white !important;
 }
+
+@media (max-width: 768px){
+
+    .card{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse; /* imagem à direita */
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-sizing: border-box;
+    }
+
+    .card:active {
+    background: #dcdcdc;
+    }
+
+    .card img{
+        width: 100px;   /* define largura */
+        height: 100px;  /* define altura */
+        border-radius: 8px;
+        object-fit: cover;
+        margin-left: 15px; /* espaço entre imagem e texto */
+    }
+
+    .card h3{
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .card .preco{
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .card button {
+        display: block;
+        margin-top: 10px;
+        width: 100%; /* ocupa toda a largura */
+    }
+}
+
+
 /*////////////////////////////////*/
 /* Carrinho */
 
@@ -336,10 +376,22 @@ input[type="password"]{
     transition: .3s;
 
     z-index: 999;
+
+    visibility: hidden;
+}
+
+@media (max-width: 768px){
+
+    .painel-carrinho{
+        top: 0;
+        height: calc(100vh - 80px);
+    }
+
 }
 
 .painel-carrinho.ativo{
     right: 0;
+    visibility: visible;
 }
 
 .painel-carrinho ul{
@@ -446,3 +498,76 @@ td{
     padding: 20px;
     margin-top: 40px;
 }
+
+/*/////////////////////////////////*/
+
+/*status da horario de funcionamento*/
+.status-loja{
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.status{
+    padding: 12px 25px;
+    border-radius: 12px;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.status.aberto{
+    background: #dff8e5;
+    color: #15803d;
+}
+
+.status.fechado{
+    background: #ffe4e4;
+    color: #c1121f;
+}
+
+.horario-info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icone{
+    font-size: 35px;
+}
+
+.horario-info p{
+    margin: 0;
+    color: #666;
+}
+
+.horario-info strong{
+    font-size: 22px;
+    color: #8b0000;
+}
+
+
+/*status no celular*/
+@media(max-width:768px){
+
+    .status-loja{
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .horario-info{
+        justify-content: center;
+    }
+
+}
+/*/////////////////////////////////*/

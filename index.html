@@ -15,27 +15,13 @@
 <header>
     <nav>
         <div class="menu">
-            <button>Início</button>
-
-            <button id="btnCadastro">
-                Minha Conta
-            </button>
-
+            <button onclick="voltarAoTopo()">Menu</button>
             <button id="btnCarrinho" class="btn-carrinho">
                 Carrinho 🛒 <span id="quantidade">0</span>
             </button>
         </div>
     </nav>
 </header>
-
-
-<div id="overlayLOG" class="overlayLOG">
-    <div class="modal">
-        <button id="btnFecharLOG" class="fechar">&times;</button>
-        <h2>Bem-vindo, <span id="usuarioNome">Visitante</span>!</h2>
-        <button id="btnRmvCad">Desconectar</button>
-    </div>
-</div>
 
 <div id="overlay" class="overlay">
     <div class="modal">
@@ -49,88 +35,190 @@
 </div>
 
 <section class="perfil">
-    <img src="imagens/barao.jpg" class="img-fundo" alt="Banner da Pizzaria">
+    <img src="imagens/fundo.jpg" class="img-fundo" alt="Banner da Pizzaria">
 </section>
 
-<section class="filtros">
-    <input type="text" placeholder="Busque por um produto:">
+<section class="status-loja">
+
+    <div id="status" class="status fechado">
+        🔴 FECHADO
+    </div>
+
+    <div class="horario-info">
+        <span class="icone">🕒</span>
+
+        <div>
+            <p>Horário de funcionamento</p>
+            <strong>18h às 23h</strong>
+        </div>
+    </div>
+
 </section>
 
-<div class="titulos">
-    <p>Pizzas Clássicas:</p>
-</div>
+<div class="titulos"><p>Pizzas Clássicas:</p></div>
 
 <section class="destaques">
 
-    <div class="card">
-        <img src="imagens/calabresa.jpg" alt="Pizza Calabresa">
-
-        <h3>Pizza Calabresa</h3>
-
-        <p class="preco">R$ 39,90</p>
-
-        <button onclick="adicionarCarrinho('Pizza Calabresa',39.90)">
-            Pedir
-        </button>
+    <div class="card" onclick="adicionarCarrinho('mista',30.49)">
+        <div class="conteudo">
+            <h3>Mista</h3>
+            <p class="preco">R$ 30,49</p>
+        </div>
     </div>
 
-    <div class="card">
-        <img src="imagens/portuguesa.jpg" alt="Pizza Portuguesa">
-
-        <h3>Pizza Portuguesa</h3>
-
-        <p class="preco">R$ 44,90</p>
-
-        <button onclick="adicionarCarrinho('Pizza Portuguesa',44.90)">
-            Pedir
-        </button>
+    <div class="card" onclick="adicionarCarrinho('calabresa', 30.49)">
+        <img src="imagens/calabresa.jpg" alt="Calabresa"> 
+        <div class="conteudo">
+            <h3>Calabresa</h3>
+            <p class="preco">R$ 30,49</p>
+        </div>
     </div>
 
-    <div class="card">
-        <img src="imagens/frango.jpg" alt="Pizza Frango">
+    <div class="card" onclick="adicionarCarrinho('mussarela',30.49)">
+        <div class="conteudo">
+            <h3>Mussarela</h3>
+            <p class="preco">R$ 30,49</p>
+        </div>
+    </div>
 
-        <h3>Pizza Frango</h3>
+    <div class="card" onclick="adicionarCarrinho('marguerita',34.90)">
+        <div class="conteudo">
+            <h3>Marguerita</h3>
+            <p class="preco">R$ 34,90</p>
+        </div>
+    </div>
+</section>
 
-        <p class="preco">R$ 49,90</p>
+    <div class="titulos"><p>Pizzas Especiais:</p></div>
 
-        <button onclick="adicionarCarrinho('Pizza Frango',49.90)">
-            Pedir
-        </button>
+<section class="destaques">
+    <div class="card" onclick="adicionarCarrinho('frango',34.99)">
+        <img src="imagens/frango.jpg" alt="Frango">
+        <div class="conteudo">
+            <h3>Frango</h3>
+            <p class="preco">R$ 34,99</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('portuguesa',34.90)">
+        <img src="imagens/portuguesa.jpg" alt="Portuguesa">
+        <div class="conteudo">
+            <h3>Portuguesa</h3>
+            <p class="preco">R$ 34,90</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('bacon',39.99)">
+        <div class="conteudo">
+            <h3>Bacon</h3>
+            <p class="preco">R$ 39,99</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('carne-do-sol',42.99)">
+        <div class="conteudo">
+            <h3>Carne do Sol</h3>
+            <p class="preco">R$ 42,99</p>
+        </div>
     </div>
 
 </section>
 
-    <div class="titulos">
-        <p>Promoções:</p>
+<div class="titulos"><p>Adicionais:</p></div>
+
+<section class="destaques">
+
+    <div class="card" onclick="adicionarCarrinho('adicional-catupiry',4.50)">
+        <img src="imagens/adicional-catupiry.jpg" alt="adicional-catupiry">
+        <div class="conteudo">
+            <h3>Adicional de Catupiry</h3>
+            <p class="preco">R$ 4,50</p>
+        </div>
     </div>
 
- <section class="destaques">
+    <div class="card" onclick="adicionarCarrinho('borda-Catupiry',4.50)">
+        <img src="imagens/borda-catupiry.jpg" alt="borda-Catupiry">
+        <div class="conteudo">
+            <h3>Borda Recheada com Catupiry</h3>
+            <p class="preco">R$ 4,50</p>
+        </div>
+    </div>
 
-    <div class="card"> 
+    <div class="card" onclick="adicionarCarrinho('borda-Chocolate',4.50)">
+        <img src="imagens/borda-chocolate.jpg" alt="borda-Chocolate">
+        <div class="conteudo">
+            <h3>Borda Recheada com Chocolate (Garoto ao Leite)</h3>
+            <p class="preco">R$ 4,50</p>
+        </div>
+    </div>
+
+</section>
+
+<div class="titulos"><p>Bebidas</p></div>
+
+<section class="destaques">
+
+    <div class="card" onclick="adicionarCarrinho('coca-600ml', 6.00)">
+        <img src="imagens/coca-cola-600ml.jpg" alt="coca-600ml">
+        <div class="conteudo">
+            <h3>Coca-Cola 600ml (NORMAL)</h3>
+            <p class="preco">R$ 6,00</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('coca-1litro',10.00)">
+        <img src="imagens/coca-cola-1litro.jpg" alt="coca-1litro">
+        <div class="conteudo">
+            <h3>Coca-Cola 1 Litro (NORMAL)</h3>
+            <p class="preco"> R$ 10,00</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('coca-zero-600ml',6.00)">
+        <img src="imagens/coca-zero-600ml.jpg" alt="coca-zero1litro">
+        <div class="conteudo">
+            <h3>Coca-Cola 600ml (ZERO AÇÚCAR)</h3>
+            <p class="preco">R$ 6,00</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('coca-zero1litro',10.00)">
+        <img src="imagens/coca-zero-1l.jpg" alt="coca-zero1litro">
+        <div class="conteudo">
+            <h3>Coca-Cola 1 Litro (ZERO AÇÚCAR)</h3>
+            <p class="preco">R$ 6,00</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="adicionarCarrinho('guarana-1litro',8.00)">
+        <img src="imagens/guarana-1litro.jpg" alt="guarana-1litro">
+        <div class="conteudo">
+            <h3>Guaraná 1 Litro</h3>
+            <p class="preco">R$ 8,00</p>
+        </div>
+    </div>
+
+</section>
+
+    <div class="titulos"><p>Promoções:</p></div>
+
+<section class="destaques">
+
+    <div class="card"  onclick="adicionarCarrinho('2x Pizzas + refri grátis',59.90)">
         <img src="imagens/promo1.jpg" alt="promo">
-
-        <h3>Duas Pizzas + Refri grátis</h3>
-
-        <p class="preco">R$ 59,90</p>
-
-        <button onclick="adicionarCarrinho('2x Pizzas + refri grátis',59.90)">
-            Pedir
-        </button>
+        <div class="conteudo">
+            <h3>Duas Pizzas + Refri grátis</h3>
+            <p class="preco">R$ 59,90</p>
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="adicionarCarrinho('Pizza + borda de chocolate grátis',34.90)">
         <img src="imagens/promo2.jpg" alt="promo">
-
-        <h3>Pizza + Borda de chocolate grátis</h3>
-
-        <p class="preco">R$ 34,90</p>
-
-        <button onclick="adicionarCarrinho('Pizza + borda de chocolate grátis',34.90)">
-            Pedir
-        </button>
+        <div class="conteudo">
+            <h3>Pizza + Borda de chocolate grátis</h3>
+            <p class="preco">R$ 34,90</p>
+        </div>    
     </div>
-
-
 </section>
 
 <div id="painelCarrinho" class="painel-carrinho">
@@ -151,7 +239,7 @@
 </div>
 
 <footer class="footer">
-    <p>© 2026 Barão - Sistema de Delivery de Pizzaria!</p>
+    <p>© 2026 Barão - Delivery de Pizzas!</p>
 </footer>
 
 <script src="script.js"></script>

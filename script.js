@@ -7,44 +7,32 @@ btnCarrinho.addEventListener("click", () => {
 
 let carrinho = [];
 let total = 0;
-function adicionarCarrinho(nome, preco){
 
+function adicionarCarrinho(nome, preco) {
     const itemExistente = carrinho.find(item => item.nome === nome);
 
-    if(itemExistente){
+    if (itemExistente) {
         itemExistente.quantidade++;
-    }else{
-        carrinho.push({
-            nome,
-            preco,
-            quantidade: 1
-        });
+    } else {
+        carrinho.push({ nome, preco, quantidade: 1 });
     }
 
     calcularTotal();
 }
 
-function atualizarCarrinho(){
-
+function atualizarCarrinho() {
     const lista = document.getElementById("listaCarrinho");
-
     lista.innerHTML = "";
 
     carrinho.forEach((item, index) => {
-
         lista.innerHTML += `
             <li class="item-carrinho">
-
                 <span>${item.nome}</span>
-
                 <div class="controle-qtd">
                     <button onclick="diminuirQuantidade(${index})">-</button>
-
                     <span>${item.quantidade}</span>
-
                     <button onclick="aumentarQuantidade(${index})">+</button>
                 </div>
-
             </li>
         `;
     });
@@ -53,142 +41,59 @@ function atualizarCarrinho(){
     document.getElementById("quantidade").textContent = carrinho.length;
 }
 
-function aumentarQuantidade(index){
-
+function aumentarQuantidade(index) {
     carrinho[index].quantidade++;
-
     calcularTotal();
 }
 
-function diminuirQuantidade(index){
-
+function diminuirQuantidade(index) {
     carrinho[index].quantidade--;
-
-    if(carrinho[index].quantidade <= 0){
+    if (carrinho[index].quantidade <= 0) {
         carrinho.splice(index, 1);
     }
-
     calcularTotal();
 }
 
-function calcularTotal(){
-
+function calcularTotal() {
     total = 0;
-
     carrinho.forEach(item => {
         total += item.preco * item.quantidade;
     });
-
     atualizarCarrinho();
 }
-// cadastro fechar e abrir overlay joão 
 
+// --- Modal de dados do cliente ---
 const overlay = document.getElementById("overlay");
-const overlayLOG = document.getElementById("overlayLOG");
-const btnCadastro = document.getElementById("btnCadastro");
-
-// carregar o nome de usuario do overlay cadastrado
-const usuarioNomeSpan = document.getElementById("usuarioNome");
-
-function atualizarNomeUsuario() {
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-    if (usuario && usuario.nome && usuarioNomeSpan) {
-        usuarioNomeSpan.textContent = usuario.nome;
-    }
-}
-
-//fim de cadastrar o nome de usuario no overlay cadastrado
-
-btnCadastro.addEventListener("click", () => {
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-
-    if (!usuario) {
-        overlay.classList.add("ativo");
-    } else {
-        atualizarNomeUsuario();
-        overlayLOG.classList.add("ativo");
-    }
-});
-
-const btnFecharLOG = document.getElementById("btnFecharLOG");
-btnFecharLOG.addEventListener("click", () => {
-    overlayLOG.classList.remove("ativo");
-});
-
 const btnFechar = document.getElementById("btnFechar");
-btnFechar.addEventListener("click", () => {
-    overlay.classList.remove("ativo");
-});
-
-// fim overlay
-
-//remove o cadastro
-const btnRmvCad = document.getElementById("btnRmvCad");
-
-btnRmvCad.addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    overlayLOG.classList.remove("ativo");
-});
-
-// fim remover cadastro
-
-// cadastro nome e telefone
-
 const btnConfirmar = document.getElementById("btnConfirmar");
-
-const inputTelefone = document.getElementById("inputTelefone");
-const inputNome = document.getElementById("inputNome");
-
-const usuario = JSON.parse(
-    localStorage.getItem("usuario")
-);
-
-btnConfirmar.addEventListener("click", () => {
-
-    const nome = inputNome.value.trim();
-    const telefone = inputTelefone.value.replaceAll(" ", "");
-    
-    if (!nome || !telefone) {
-        alert('Preencha seu nome e telefone!');
-    return;}
-
-    const usuario = { nome, telefone };
-
-    localStorage.setItem(
-        "usuario",
-        JSON.stringify(usuario)
-    );
-
-    overlay.classList.remove("ativo");
-
-});
-
-
-
-// fim cadastro nome e telefone
-
-// finalizando e enviando mensagem para o whatsapp
-
 const btnFinalizar = document.getElementById("btnFinalizar");
 
-
 btnFinalizar.addEventListener("click", () => {
-
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-
-    if (!usuario) {
-    alert("Faça seu cadastro para finalizar o pedido!");
-    overlay.classList.add("ativo");
-    return;}
-
     if (total <= 0) {
         alert("Adicione pelo menos um item ao carrinho!");
         return;
     }
+    overlay.classList.add("ativo"); // abre modal
+});
+
+btnFechar.addEventListener("click", () => {
+    overlay.classList.remove("ativo");
+});
+
+btnConfirmar.addEventListener("click", () => {
+    const nome = document.getElementById("inputNome").value.trim();
+    const telefone = document.getElementById("inputTelefone").value.trim();
+    const endereco = document.getElementById("inputEndereco").value.trim();
+
+    if (!nome || !telefone || !endereco) {
+        alert("Preencha todos os dados!");
+        return;
+    }
 
     let texto = `NOVO PEDIDO\n\n`;
-    texto += `Cliente: ${usuario.nome}\n`;
-    texto += `Telefone: ${usuario.telefone}\n\n`;
+    texto += `Cliente: ${nome}\n`;
+    texto += `Telefone: ${telefone}\n`;
+    texto += `Endereço: ${endereco}\n\n`;
     texto += `Itens:\n`;
     carrinho.forEach(item => {
         texto += `• ${item.nome} x${item.quantidade}\n`;
@@ -196,4 +101,57 @@ btnFinalizar.addEventListener("click", () => {
 
     const url = `https://wa.me/558585631664?text=${encodeURIComponent(texto)}`;
     window.open(url, '_blank');
+
+    carrinho = [];
+    total = 0;
+    atualizarCarrinho();
 });
+
+function verificarHorario() {
+
+    const agora = new Date();
+    const diaSemana = agora.getDay(); // 0=Domingo
+    const hora = agora.getHours();
+
+    const status = document.getElementById("statusHorario");
+
+    const abertoDias = [0,2,3,4,5,6]; // Domingo e Terça a Sábado
+    const horaAbertura = 18;
+    const horaFechamento = 23;
+
+    if (abertoDias.includes(diaSemana) &&
+        hora >= horaAbertura &&
+        hora < horaFechamento){
+
+        status.innerHTML = "🟢 <strong>ABERTO</strong> • Funcionamos das 18h às 23h";
+        status.classList.add("aberto");
+        status.classList.remove("fechado");
+
+    }else{
+
+        status.innerHTML = "🔴 <strong>FECHADO</strong> • Funcionamos das 18h às 23h";
+        status.classList.add("fechado");
+        status.classList.remove("aberto");
+
+    }
+
+}
+
+/*botão de levar pro topo*/
+
+function voltarAoTopo() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+    // Atualiza ao carregar
+verificarHorario();
+
+    // Atualiza a cada minuto para manter status correto
+setInterval(verificarHorario, 60000);
+
+        
+overlay.classList.remove("ativo");

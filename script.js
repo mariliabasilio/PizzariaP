@@ -1,175 +1,198 @@
-const btnCarrinho = document.getElementById("btnCarrinho");
-const painelCarrinho = document.getElementById("painelCarrinho");
+  const btnCarrinho = document.getElementById("btnCarrinho");
+    const painelCarrinho = document.getElementById("painelCarrinho");
 
-btnCarrinho.addEventListener("click", () => {
-    painelCarrinho.classList.toggle("ativo");
-});
-
-carrinho = [];
-total = 0;
-atualizarCarrinho();
-
-overlay.classList.remove("ativo");
-
-document.getElementById("inputNome").value = "";
-document.getElementById("inputTelefone").value = "";
-document.getElementById("inputEndereco").value = "";
-
-function adicionarCarrinho(nome, preco) {
-    const itemExistente = carrinho.find(item => item.nome === nome);
-
-    if (itemExistente) {
-        itemExistente.quantidade++;
-    } else {
-        carrinho.push({ nome, preco, quantidade: 1 });
-    }
-
-    calcularTotal();
-}
-
-function atualizarCarrinho() {
-    const lista = document.getElementById("listaCarrinho");
-    lista.innerHTML = "";
-
-    carrinho.forEach((item, index) => {
-        lista.innerHTML += `
-            <li class="item-carrinho">
-                <span>${item.nome}</span>
-                <div class="controle-qtd">
-                    <button onclick="diminuirQuantidade(${index})">-</button>
-                    <span>${item.quantidade}</span>
-                    <button onclick="aumentarQuantidade(${index})">+</button>
-                </div>
-            </li>
-        `;
+    btnCarrinho.addEventListener("click", () => {
+        painelCarrinho.classList.toggle("ativo");
     });
 
-    document.getElementById("total").textContent = total.toFixed(2);
-    document.getElementById("quantidade").textContent = carrinho.length;
-}
+    let carrinho = [];
+    let total = 0;
 
-function aumentarQuantidade(index) {
-    carrinho[index].quantidade++;
-    calcularTotal();
-}
+    function adicionarCarrinho(nome, preco) {
+        const itemExistente = carrinho.find(item => item.nome === nome);
 
-function diminuirQuantidade(index) {
-    carrinho[index].quantidade--;
-    if (carrinho[index].quantidade <= 0) {
-        carrinho.splice(index, 1);
+        if (itemExistente) {
+            itemExistente.quantidade++;
+        } else {
+            carrinho.push({ nome, preco, quantidade: 1 });
+        }
+
+        calcularTotal();
+
+        const notificacao = document.getElementById("notificacao");
+        notificacao.textContent = "Item adicionado ao carrinho!";
+        notificacao.classList.add("ativa");
+
+        setTimeout(() => {
+            notificacao.classList.remove("ativa");
+        }, 3000);
     }
-    calcularTotal();
-}
 
-function calcularTotal() {
-    total = 0;
-    carrinho.forEach(item => {
-        total += item.preco * item.quantidade;
+    function atualizarCarrinho() {
+        const lista = document.getElementById("listaCarrinho");
+        lista.innerHTML = "";
+
+        carrinho.forEach((item, index) => {
+            lista.innerHTML += `
+                <li class="item-carrinho">
+                    <span>${item.nome}</span>
+                    <div class="controle-qtd">
+                        <button onclick="diminuirQuantidade(${index})">-</button>
+                        <span>${item.quantidade}</span>
+                        <button onclick="aumentarQuantidade(${index})">+</button>
+                    </div>
+                </li>
+            `;
+        });
+
+        document.getElementById("total").textContent = total.toFixed(2);
+        document.getElementById("quantidade").textContent = carrinho.length;
+    }
+
+    function aumentarQuantidade(index) {
+        carrinho[index].quantidade++;
+        calcularTotal();
+    }
+
+    function diminuirQuantidade(index) {
+        carrinho[index].quantidade--;
+        if (carrinho[index].quantidade <= 0) {
+            carrinho.splice(index, 1);
+        }
+        calcularTotal();
+    }
+
+    function calcularTotal() {
+        total = 0;
+        carrinho.forEach(item => {
+            total += item.preco * item.quantidade;
+        });
+        atualizarCarrinho();
+    }
+
+    // --- Modal de dados do cliente ---
+    const overlay = document.getElementById("overlay");
+    const btnFechar = document.getElementById("btnFechar");
+    const btnConfirmar = document.getElementById("btnConfirmar");
+    const btnFinalizar = document.getElementById("btnFinalizar");
+
+    btnFinalizar.addEventListener("click", () => {
+        if (total <= 0) {
+            alert("Adicione pelo menos um item ao carrinho!");
+            return;
+        }
+        overlay.classList.add("ativo"); // abre modal
     });
-    atualizarCarrinho();
-}
 
-// --- Modal de dados do cliente ---
-const overlay = document.getElementById("overlay");
-const btnFechar = document.getElementById("btnFechar");
-const btnConfirmar = document.getElementById("btnConfirmar");
-const btnFinalizar = document.getElementById("btnFinalizar");
-
-btnFinalizar.addEventListener("click", () => {
-    if (total <= 0) {
-        alert("Adicione pelo menos um item ao carrinho!");
-        return;
-    }
-    overlay.classList.add("ativo"); // abre modal
-});
-
-btnFechar.addEventListener("click", () => {
-    overlay.classList.remove("ativo");
-});
-
-btnConfirmar.addEventListener("click", () => {
-    const nome = document.getElementById("inputNome").value.trim();
-    const telefone = document.getElementById("inputTelefone").value.trim();
-    const endereco = document.getElementById("inputEndereco").value.trim();
-
-    if (!nome || !telefone || !endereco) {
-        alert("Preencha todos os dados!");
-        return;
-    }
-
-    let texto = `NOVO PEDIDO\n\n`;
-    texto += `Cliente: ${nome}\n`;
-    texto += `Telefone: ${telefone}\n`;
-    texto += `Endereço: ${endereco}\n\n`;
-    texto += `Itens:\n`;
-    carrinho.forEach(item => {
-        texto += `• ${item.nome} x${item.quantidade}\n`;
+    btnFechar.addEventListener("click", () => {
+        overlay.classList.remove("ativo");
     });
 
-    const url = `https://wa.me/558585631664?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
+    btnConfirmar.addEventListener("click", () => {
+        const nome = document.getElementById("inputNome").value.trim();
+        const telefone = document.getElementById("inputTelefone").value.trim();
+        const endereco = document.getElementById("inputEndereco").value.trim();
 
-    carrinho = [];
-    total = 0;
-    atualizarCarrinho();
-});
+        if (!nome || !telefone || !endereco) {
+            alert("Preencha todos os dados!");
+            return;
+        }
 
-function verificarHorario() {
+        let texto = `NOVO PEDIDO\n\n`;
+        texto += `Cliente: ${nome}\n`;
+        texto += `Telefone: ${telefone}\n`;
+        texto += `Endereço: ${endereco}\n\n`;
+        texto += `Itens:\n`;
+        carrinho.forEach(item => {
+            texto += `• ${item.nome} x${item.quantidade}\n`;
+        });
 
-    const agora = new Date();
+        const url = `https://wa.me/558585631664?text=${encodeURIComponent(texto)}`;
+        window.open(url, '_blank');
 
-    const diaSemana = agora.getDay();
-    const hora = agora.getHours();
+        carrinho = [];
+        total = 0;
+        atualizarCarrinho();
+    });
 
-    const status = document.getElementById("statusHorario");
+    function verificarHorario() {
 
-    const diasAbertos = [0, 2, 3, 4, 5, 6]; // Domingo e Terça a Sábado
+        const agora = new Date();
+        const diaSemana = agora.getDay(); // 0=Domingo
+        const hora = agora.getHours();
 
-    const abertura = 18;
-    const fechamento = 23;
+        const status = document.getElementById("statusHorario");
 
-    const aberto =
-        diasAbertos.includes(diaSemana) &&
-        hora >= abertura &&
-        hora < fechamento;
+        const abertoDias = [0,2,3,4,5,6]; // Domingo e Terça a Sábado
+        const horaAbertura = 18;
+        const horaFechamento = 23;
 
-    if (aberto) {
+        if (abertoDias.includes(diaSemana) &&
+            hora >= horaAbertura &&
+            hora < horaFechamento){
 
-        status.innerHTML = `
-            <span class="icone-status">🟢</span>
-            <strong>ABERTO</strong><br>
-            <small>Funcionamos das 18h às 23h</small>
-        `;
+            status.innerHTML = "🟢 <strong>ABERTO</strong> • Funcionamos das 18h às 23h";
+            status.classList.add("aberto");
+            status.classList.remove("fechado");
 
-        status.classList.add("aberto");
-        status.classList.remove("fechado");
+        }else{
 
-    } else {
+            status.innerHTML = "🔴 <strong>FECHADO</strong> • Funcionamos das 18h às 23h";
+            status.classList.add("fechado");
+            status.classList.remove("aberto");
 
-        status.innerHTML = `
-            <span class="icone-status">🔴</span>
-            <strong>FECHADO</strong><br>
-            <small>Funcionamos das 18h às 23h</small>
-        `;
+        }
 
-        status.classList.add("fechado");
-        status.classList.remove("aberto");
     }
-}
 
 /*botão de levar pro topo*/
-function voltarAoTopo() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
+
+    function voltarAoTopo() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 
     // Atualiza ao carregar
-verificarHorario();
+    verificarHorario();
 
     // Atualiza a cada minuto para manter status correto
-setInterval(verificarHorario, 60000);
-
+    setInterval(verificarHorario, 60000);
         
-overlay.classList.remove("ativo");
+    overlay.classList.remove("ativo");
+
+    function adicionarCarrinho(nome, preco) {
+        const itemExistente = carrinho.find(item => item.nome === nome);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+        } else {
+            carrinho.push({ nome, preco, quantidade: 1 });
+        }
+
+        calcularTotal();
+
+
+        // chama a notificação
+        mostrarNotificacao(`${nome} adicionado ao carrinho!`, "sucesso");
+
+    }
+
+function mostrarNotificacao(mensagem, tipo = "sucesso") {
+    const notificacao = document.getElementById("notificacao");
+    notificacao.textContent = mensagem;
+
+    // remove classes antigas
+    notificacao.className = "notificacao";
+
+    // adiciona tipo (sucesso ou erro)
+    notificacao.classList.add("ativo", tipo);
+
+    // Remove após 3 segundos
+    setTimeout(() => {
+        notificacao.classList.remove("ativo", tipo);
+    }, 3000);
+
+
+}

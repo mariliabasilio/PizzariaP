@@ -11,6 +11,7 @@ body{
 
 h2{
     color: #18231E;
+
 }
 
 
@@ -236,7 +237,7 @@ input:focus{
     width: 80%;
     height: 30px;
     margin: 40px auto;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 550;
     color:#18231E;
 }
@@ -266,7 +267,12 @@ input:focus{
     border:1px solid #E8D7BE;
     transition:.25s;
     
-}   
+}  
+
+.card h2 {
+    font-size: 18px; /* diminui o título */
+    margin: 5px 0;
+}
 
 .card img{
     width: 100%;
@@ -277,7 +283,7 @@ input:focus{
 .card .preco{
     color: #B3261E;;
     font-weight:700;
-    font-size:22px;
+    font-size:20px;
 }
 
 
@@ -527,21 +533,18 @@ td{
     padding: 12px 25px;
     border-radius: 12px;
 
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .status.aberto{
     background: #dff8e5;
     color: #15803d;
-    font-size: 17px;
-
 }
 
 .status.fechado{
     background: #ffe4e4;
     color: #c1121f;
-    font-size: 17px;
 }
 
 .horario-info{
@@ -551,7 +554,7 @@ td{
 }
 
 .icone{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .horario-info p{
@@ -560,7 +563,7 @@ td{
 }
 
 .horario-info strong{
-    font-size: 22px;
+    font-size: 18px;
     color:  #B3261E;
 }
 
@@ -579,4 +582,37 @@ td{
     }
 
 }
-/*/////////////////////////////////*/
+
+
+.notificacao {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(-20px);
+    z-index: 9999;
+    font-weight: bold;
+}
+
+.notificacao.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notificacao.sucesso {
+    background: #15803d; /* verde */
+}
+
+.notificacao.erro {
+    background: #c1121f; /* vermelho */
+}
+
+
+
+/*/////////////////////////////////* 
